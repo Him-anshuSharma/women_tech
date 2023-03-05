@@ -13,15 +13,41 @@ class EmailOrganizerPage extends StatefulWidget {
 }
 
 class _EmailOrganizerPageState extends State<EmailOrganizerPage> {
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     //final Categories provider = Provider.of<Categories>(context);
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        // backgroundColor: Colors.purple.shade100,
+        selectedItemColor: Colors.purple[900],
+        selectedLabelStyle: TextStyle(color: Colors.purple),
+        unselectedItemColor: Colors.purple[200],
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today),
+            label: 'Your Schedule',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.event),
+            label: 'Events',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/BgPage.png'),
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
           ),
         ),
         child: Container(
@@ -31,13 +57,15 @@ class _EmailOrganizerPageState extends State<EmailOrganizerPage> {
             const SizedBox(
               height: 100,
             ),
-            const Text(
-              'Add Keywords to Categories',
-              style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w800),
-                  textAlign: TextAlign.center,
+            Center(
+              child: const Text(
+                'Email Organizer',
+                style: TextStyle(
+                    fontSize: 35,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w800),
+                    textAlign: TextAlign.center,
+              ),
             ),
             const SizedBox(
               height: 30,
@@ -49,6 +77,7 @@ class _EmailOrganizerPageState extends State<EmailOrganizerPage> {
                   fontSize: 14,
                   color: Colors.black,
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
             const SizedBox(
@@ -91,4 +120,17 @@ class _EmailOrganizerPageState extends State<EmailOrganizerPage> {
       ),
     );
   }
+
+  void _onItemTapped(int value) {
+    switch(value){
+      // case 0: Navigator.pushNamed(context, '/EmailOrganizerPage');break;   
+      case 1: Navigator.pushNamed(context, '/calendarScreen');break;
+
+      case 2: Navigator.pushNamed(context, '/eventsScreen');break;
+
+      case 3: Navigator.pushNamed(context, '/profilePage');break;
+
+       }
+  }
+
 }

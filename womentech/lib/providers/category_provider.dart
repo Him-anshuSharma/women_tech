@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 class CategoriesProvider extends ChangeNotifier {
-  final List<String> _categories = ["1","2","3","4","5","Add New Category"];
+  final List<String> _categories = ["Examination","Hostels","Sports","Internships","Hackathons","Add New Category"];
 
   List<String> get items => [..._categories];
 

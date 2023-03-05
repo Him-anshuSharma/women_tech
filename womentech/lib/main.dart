@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:womentech/providers/category_provider.dart';
 import 'package:womentech/providers/keyword_provider.dart';
+import 'package:womentech/screens/calendar_screen.dart';
 import 'package:womentech/screens/categories_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/email_organize_screen.dart';
@@ -11,6 +12,7 @@ import 'screens/keywords_screen.dart';
 import 'package:womentech/providers/category_provider.dart';
 import 'screens/category_mail_screen.dart';
 import 'screens/categories_screen.dart';
+import 'screens/profile_page.dart';
 import 'no_trans.dart';
 
 void main(){
@@ -38,14 +40,16 @@ class MyApp extends StatelessWidget {
           },
         ),
         ),
-        initialRoute: '/authenticationPage',
+        initialRoute: '/EmailOrganizerPage',
       routes: {
         '/':(context) =>  const HomePage(),
         '/EmailOrganizerPage' : (context) => const EmailOrganizerPage(),
         '/authenticationPage' : (context) => const AuthenticationPage(),
-        '/keywordsPage' : (context) => const KeywordPage(),
+        '/keywordsPage' : (context) => const KeywordsPage(),
         '/categoriesPage' : (context) => const CategoryPage(),
         '/categoryMailPage' : (context) => const CategoryEmailPage(),
+        '/profilePage' : (context) => const ProfileScreen(),
+        '/calendarScreen' : (context) =>  CalendarPage(),
       },
       )
     );

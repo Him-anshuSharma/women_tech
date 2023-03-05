@@ -33,50 +33,16 @@ class _CategoryPageState extends State<CategoryPage> {
             child: Column(
               children: [
                 SizedBox(
-                height: 30,
+                height: 150,
               ),
-              Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.menu,
-                        color: Colors.black,
-                        size: 30,
-                      ),
-                      onPressed: () => Scaffold.of(context).openDrawer(),
-                    ),
-                  ),
-                  Expanded(child: SizedBox()),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: IconButton(
-                      icon: Icon(Icons.notifications_active),
-                      color: Colors.black,
-                      onPressed: () {},
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
-                    child: CircleAvatar(
-                      backgroundColor: Colors.purple,
-                    ),
-                  )
-                ],
-              ),
-    
-              const SizedBox(
-                height: 30,
-              ),
-    
+          
                 // Place for the keywords to show
                 const Text(
-                  "Add New Category", 
+                  "Add New Categories", 
                   style: TextStyle(
                     fontWeight: FontWeight.w800, 
-                    fontSize: 25),),
-                 SizedBox(height: 160,),
+                    fontSize: 30),),
+                 SizedBox(height: 140,),
                 Container(
                   margin: EdgeInsets.all(10),
                   child: TextFormField(

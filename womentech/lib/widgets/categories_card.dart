@@ -32,9 +32,11 @@ class CatContainer extends StatelessWidget {
         padding: EdgeInsets.all(10),
         child: Text(
           catName,
+          
+            textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.black,
-            fontSize: 15,
+            fontSize: 12,
           ),
         ),
       ),

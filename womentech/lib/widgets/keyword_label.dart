@@ -10,23 +10,30 @@ class KeywordContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.all(5),
-        height: 30,
-        width: 30,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(width: 2, color: Colors.black),
-          color: Colors.purple[300],
-        ),
-        padding: EdgeInsets.all(10),
-        child: Text(
-          keywordName,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 10,
-          ),
-        ),
-    );
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.purple[100],
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            keywordName,
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.black,
+                                decoration: TextDecoration.none),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Icon(
+                            Icons.close,
+                            size: 15,
+                          )
+                        ],
+                      ),
+                    );
   }
 }
