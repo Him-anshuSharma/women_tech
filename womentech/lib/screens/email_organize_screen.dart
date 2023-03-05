@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 import 'package:womentech/providers/category_provider.dart';
 import 'package:womentech/widgets/categories_card.dart';
 
-
 class EmailOrganizerPage extends StatefulWidget {
   const EmailOrganizerPage({super.key});
 
@@ -17,7 +16,8 @@ class _EmailOrganizerPageState extends State<EmailOrganizerPage> {
   @override
   Widget build(BuildContext context) {
     //final Categories provider = Provider.of<Categories>(context);
-    return Container(
+    return Scaffold(
+      body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/BgPage.png'),
@@ -28,56 +28,20 @@ class _EmailOrganizerPageState extends State<EmailOrganizerPage> {
           margin: const EdgeInsets.all(15),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            SizedBox(
-              height: 30,
-            ),
-            Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.menu,
-                      color: Colors.black,
-                      size: 30,
-                    ),
-                    onPressed: () => Scaffold.of(context).openDrawer(),
-                  ),
-                ),
-                Expanded(child: SizedBox()),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: IconButton(
-                    icon: Icon(Icons.notifications_active),
-                    color: Colors.black,
-                    onPressed: () {},
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.purple,
-                  ),
-                )
-              ],
-            ),
-
             const SizedBox(
-              height: 30,
+              height: 100,
             ),
-
             const Text(
               'Add Keywords to Categories',
               style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 30,
                   color: Colors.black,
                   fontWeight: FontWeight.w800),
+                  textAlign: TextAlign.center,
             ),
-
             const SizedBox(
-              height: 15,
+              height: 30,
             ),
-
             const Center(
               child: Text(
                 'Customize your emails and filter them according to the keywords you select.',
@@ -87,11 +51,9 @@ class _EmailOrganizerPageState extends State<EmailOrganizerPage> {
                 ),
               ),
             ),
-
             const SizedBox(
-              height: 15,
+              height: 20,
             ),
-
             const Center(
               child: Text(
                 '(Tap on categories to add keywords)',
@@ -101,11 +63,9 @@ class _EmailOrganizerPageState extends State<EmailOrganizerPage> {
                 ),
               ),
             ),
-
             SizedBox(
-              height: 30,
+              height: 10,
             ),
-
             Expanded(
               child: Consumer<CategoriesProvider>(
                 builder: (context, provider, child) {
@@ -119,8 +79,8 @@ class _EmailOrganizerPageState extends State<EmailOrganizerPage> {
                     ),
                     itemCount: allCategoryList.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return CatContainer(catName: allCategoryList[index]
-                      , color: Colors.red);
+                      return CatContainer(
+                          catName: allCategoryList[index], color: Colors.red);
                     },
                   );
                 },
@@ -128,8 +88,7 @@ class _EmailOrganizerPageState extends State<EmailOrganizerPage> {
             )
           ]),
         ),
-      
+      ),
     );
   }
 }
-

@@ -83,8 +83,15 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: LeftNavigationBar(),
-      body: Container(
+      resizeToAvoidBottomInset: false,
+      body:  Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/BgPage.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child:Container(
         child: Column(
           children: [
             SizedBox(
@@ -125,10 +132,10 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 30,
             ),
-            Wrapper(),
           ],
         ),
-      ),
+      ),)
+      ,
     );
   }
 }

@@ -13,7 +13,11 @@ class CatContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/categoryMailPage', arguments: catName);
+        if(catName == "Add New Category"){
+        Navigator.pushNamed(context, '/categoriesPage', arguments: catName);
+        }
+        else{
+        Navigator.pushNamed(context, '/categoryMailPage', arguments: catName);}
       },
       child: Container(
         margin: EdgeInsets.all(5),

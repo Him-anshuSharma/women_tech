@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:womentech/screens/categories_screen.dart';
-import 'package:womentech/screens/category_mail_screen.dart';
+import 'package:womentech/screens/categories_screen.dart'; //works
+import 'package:womentech/screens/category_mail_screen.dart'; //works
 import 'package:womentech/screens/email_organize_screen.dart';
 import 'package:womentech/screens/keywords_screen.dart';
 
@@ -9,6 +9,6 @@ class Wrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CategoryPage();
+    return KeywordPage();
   }
 }
