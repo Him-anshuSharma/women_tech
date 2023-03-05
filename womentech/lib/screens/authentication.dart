@@ -28,7 +28,7 @@ class AuthenticationPage extends StatelessWidget {
               ],)
             ),
             onTap: (){
-              Navigator.pushNamed(context,'/');
+              Navigator.pushNamed(context,'/EmailOrganizerPage');
             },
           ),
 

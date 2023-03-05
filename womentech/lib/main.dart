@@ -11,6 +11,7 @@ import 'screens/keywords_screen.dart';
 import 'package:womentech/providers/category_provider.dart';
 import 'screens/category_mail_screen.dart';
 import 'screens/categories_screen.dart';
+import 'no_trans.dart';
 
 void main(){
   runApp(const MyApp());
@@ -18,7 +19,8 @@ void main(){
 
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,13 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(),
+        theme: ThemeData(
+          pageTransitionsTheme: const PageTransitionsTheme(
+          builders: {
+            TargetPlatform.android: NoTransitionPageTransitionsBuilder(),
+          },
+        ),
+        ),
         initialRoute: '/authenticationPage',
       routes: {
         '/':(context) =>  const HomePage(),

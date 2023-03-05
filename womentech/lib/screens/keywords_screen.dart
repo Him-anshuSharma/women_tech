@@ -23,8 +23,15 @@ class _KeywordPageState extends State<KeywordPage> {
   Widget build(BuildContext context) {
     final keywordListProvider = Provider.of<KeywordListProvider>(context);
 
-    return Container(
-      child: Form(
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/BgPage.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child : Form(
         key: _formKey,
         child: Column(
           children: [
@@ -32,7 +39,7 @@ class _KeywordPageState extends State<KeywordPage> {
               "Add Your Specific Keyword",
               style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
             ),
-
+    
              Container(
                child: Consumer<KeywordListProvider>(
                 builder: (context, provider, child) {
@@ -105,7 +112,7 @@ class _KeywordPageState extends State<KeywordPage> {
             ),
           ],
         ),
-      ),
+      )),
     );
   }
 }

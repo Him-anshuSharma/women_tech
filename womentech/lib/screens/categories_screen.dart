@@ -19,16 +19,64 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     final categories = Provider.of<CategoriesProvider>(context);
-    return Container(
-        child: Form(
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/BgPage.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child:Form(
             key: _formKey,
             child: Column(
               children: [
+                SizedBox(
+                height: 30,
+              ),
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.menu,
+                        color: Colors.black,
+                        size: 30,
+                      ),
+                      onPressed: () => Scaffold.of(context).openDrawer(),
+                    ),
+                  ),
+                  Expanded(child: SizedBox()),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IconButton(
+                      icon: Icon(Icons.notifications_active),
+                      color: Colors.black,
+                      onPressed: () {},
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.purple,
+                    ),
+                  )
+                ],
+              ),
+    
+              const SizedBox(
+                height: 30,
+              ),
+    
                 // Place for the keywords to show
-                Text("Add New Category", style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20),),
-                const SizedBox(
-                  height: 150,
-                ),
+                const Text(
+                  "Add New Category", 
+                  style: TextStyle(
+                    fontWeight: FontWeight.w800, 
+                    fontSize: 25),),
+                 SizedBox(height: 160,),
                 Container(
                   margin: EdgeInsets.all(10),
                   child: TextFormField(
@@ -46,10 +94,10 @@ class _CategoryPageState extends State<CategoryPage> {
                         hintText: "Type Your Category Here",
                         errorStyle: TextStyle(
                           color: Colors.purple[400],
-      
+        
                         ),
                         ),
-
+    
                         
                     validator: ((value) =>
                         (value!.isEmpty ? "Enter a category" : null)),
@@ -86,6 +134,7 @@ class _CategoryPageState extends State<CategoryPage> {
                   ),
                 ),
               ],
-            )));
+            )),)
+    );
   }
 }
